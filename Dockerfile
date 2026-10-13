@@ -41,7 +41,7 @@ COPY src/docs/package.json src/docs/
 # unless any packages/puter/extensions/* gain a package.json.)
 COPY tools/extensionSetup.mjs tools/extensionSetup.mjs
 
-RUN --mount=type=cache,target=/root/.npm \
+RUN --mount=type=cache,id=s/<service id>-/root/.npm,target=/root/.npm
     npm ci
 
 # ---- Source layer -------------------------------------------------------
